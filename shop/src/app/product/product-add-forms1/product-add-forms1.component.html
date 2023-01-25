@@ -1,0 +1,109 @@
+<h3>Add Product</h3>
+<form #productAddForm="ngForm" (ngSubmit)="add(productAddForm)">
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="*Product name"
+      #name="ngModel"
+      [(ngModel)]="model.name"
+      class="form-control"
+      name="name"
+      id="name"
+      required
+    />
+  </div>
+  <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">
+    You must enter a product name
+  </div>
+  <hr />
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="*Description"
+      #description="ngModel"
+      [(ngModel)]="model.description"
+      class="form-control"
+      name="description"
+      id="description"
+      required
+    />
+  </div>
+  <div
+    *ngIf="description.invalid && description.dirty"
+    class="alert alert-danger"
+  >
+    The product must have a description
+  </div>
+  <hr />
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="*Product Image Url"
+      #imageUrl="ngModel"
+      [(ngModel)]="model.imageUrl"
+      class="form-control"
+      name="imageUrl"
+      id="imageUrl"
+      required
+    />
+  </div>
+  <div *ngIf="imageUrl.invalid && imageUrl.dirty" class="alert alert-danger">
+    The product must have an url for image
+  </div>
+  <hr />
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="*Price"
+      #price="ngModel"
+      [(ngModel)]="model.price"
+      class="form-control"
+      name="price"
+      id="price"
+      required
+    />
+  </div>
+  <div *ngIf="price.invalid && price.dirty" class="alert alert-danger">
+    The product must have price for sale
+  </div>
+  <hr />
+  <div class="form-control">
+    <select
+      class="form-select"
+      #categoryId="ngModel"
+      [(ngModel)]="model.categoryId"
+      required
+      name="categoryId"
+      id="categoryId"
+      aria-label="Default select example"
+    >
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <div
+      id="filterTextHelp"
+      class="form-text"
+      *ngFor="let category of categories"
+    >
+      <option>{{ category.id }} for {{ category.name }}</option>
+    </div>
+    <hr />
+    <div
+      *ngIf="categoryId.invalid && categoryId.touched"
+      class="alert alert-danger"
+    >
+      The category is needed for product
+    </div>
+  </div>
+  <hr />
+  <button
+    type="submit"
+    class="btn btn-outline-primary"
+    [disabled]="productAddForm.invalid"
+  >
+    Add
+  </button>
+</form>

@@ -1,0 +1,46 @@
+<!-- <h3 *ngIf="products; else noProduct">{{ title }}</h3> -->
+<app-category></app-category>
+<div class="mb-3">
+  <input
+    class="form-control"
+    id="searchingWords"
+    placeholder="What would you like to buy?"
+    [(ngModel)]="filterText"
+  />
+  <div id="filterTextHelp" class="form-text">
+    You can write a word for find what you looking for.
+  </div>
+</div>
+<hr />
+<div class="row">
+  <ng-template #noProduct>
+    <div class="alert alert-primary" role="alert">
+      There is no product in this category!
+    </div>
+  </ng-template>
+  <div
+    *ngFor="let product of products | productFilter : filterText"
+    class="productbox"
+    style="width: 20rem; height: 20rem; text-align: center;"
+  >
+    <img [src]="product.imageUrl" class="card-img-top" alt="image" />
+    <div class="card-body">
+      <h5 class="card-title mt-2">{{ product.name }}</h5>
+      <p class="card-text">
+        {{ product.description }}
+      </p>
+      <div class="row">
+        <div class="col-md-6 justify-content-start">
+          <a class="btn btn-outline-primary">{{
+            product.price | currency : "USD" : true : "1.0-2"
+          }}</a>
+        </div>
+        <div class="col-md-6 justify-content-end">
+          <a (click)="addToCart(product)" class="btn btn-outline-success"
+            >Add +1</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,121 @@
+<h3>Add Product - Reactive</h3>
+<form [formGroup]="productAddForm" (ngSubmit)="add()" class="form-group">
+  <div>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      formControlName="name" 
+      class="form-control"
+      placeholder="*Product name"
+    />
+    <div
+      *ngIf="
+        productAddForm.get('name').hasError('required') &&
+        productAddForm.get('name').dirty
+      "
+      class="alert alert-danger"
+    >
+      You must enter a product name
+    </div>
+  </div>
+  <hr />
+  <div>
+    <input
+      type="text"
+      id="description"
+      name="description"
+      formControlName="description"
+      class="form-control"
+      placeholder="*Description"
+    />
+    <div
+      *ngIf="
+        productAddForm.get('description').hasError('required') &&
+        productAddForm.get('description').dirty
+      "
+      class="alert alert-danger"
+    >
+      The product must have a description
+    </div>
+  </div>
+  <hr />
+  <div>
+    <input
+      type="text"
+      id="imageUrl"
+      name="imageUrl"
+      formControlName="imageUrl"
+      class="form-control"
+      placeholder="*Image Url"
+    />
+    <div
+      *ngIf="
+        productAddForm.get('imageUrl').hasError('required') &&
+        productAddForm.get('imageUrl').dirty
+      "
+      class="alert alert-danger"
+    >
+      The product must have an url for image
+    </div>
+    <hr />
+  </div>
+  <div>
+    <input
+      type="text"
+      id="price"
+      name="price"
+      formControlName="price"
+      class="form-control"
+      placeholder="*Price"
+    />
+    <div
+      *ngIf="
+        productAddForm.get('price').hasError('required') &&
+        productAddForm.get('price').dirty
+      "
+      class="alert alert-danger"
+    >
+      The product must have price for sale
+    </div>
+  </div>
+  <hr />
+  <div>
+    <select
+      class="form-select"
+      name="categoryId"
+      id="categoryId"
+      
+      required
+    >
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <div
+      class="form-text"
+      id="filterOptionHelp"
+      *ngFor="let category of categories"
+    >
+      <option>{{ category.id }} for {{ category.name }}</option>
+    </div>
+    <div
+      *ngIf="
+        productAddForm.get('categoryId').hasError('required') &&
+        productAddForm.get('categoryId').dirty
+      "
+      class="alert alert-danger"
+    >
+      The category is needed for product
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-outline-primary"
+    [disabled]="productAddForm.invalid"
+  >
+    Add
+  </button>
+</form>

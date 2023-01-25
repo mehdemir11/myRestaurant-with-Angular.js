@@ -1,0 +1,82 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Huawei Laptop",
+      "price": 800,
+      "categoryId": 1,
+      "description": "Matebook D16 R5 4600H 16GB RAM 512 SSD",
+      "imageUrl": "https://resim.epey.com/678899/b_huawei-matebook-d16-harvey-wap9c-r5-4600h-8gb-512gb-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Huawei Laptop",
+      "price": 650,
+      "categoryId": 1,
+      "description": "Matebook D15 R5 5500U 8GB RAM 512 SSD",
+      "imageUrl": "https://resim.epey.com/749485/b_huawei-matebook-d15-r5-5500u-8gb-512gb-7.png"
+    },
+    {
+      "id": 3,
+      "name": "Monster Laptop",
+      "price": 1000,
+      "categoryId": 1,
+      "description": "Tulpar T7 V17.3 16GB RAM 1TB HDD  512GB SSD",
+      "imageUrl": "https://resim.epey.com/201150/b_monster-tulpar-t7-v20-1-1-2.jpg"
+    },
+    {
+      "name": "James Donkey Monitor",
+      "description": "James Donkey 27\" 1ms 144hz FULL HD 1920x1080 VA Panel",
+      "imageUrl": "https://resim.epey.com/393538/b_james-donkey-jd27fg1ms144-6.jpg",
+      "price": "400",
+      "categoryId": 5,
+      "id": 7
+    },
+    {
+      "id": 4,
+      "name": "Toshiba Laptop",
+      "price": 300,
+      "categoryId": 1,
+      "description": "Satellite Intel i7-5500u 8GB RAM 256 SSD",
+      "imageUrl": "https://resim.epey.com/32149/m_toshiba-satellite-p50-c-11w-6.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Bluetooth Speaker",
+      "price": 20,
+      "categoryId": 3,
+      "description": "Harman Kardon Onyx Studio 7 Bluetooth Speaker",
+      "imageUrl": "https://resim.epey.com/645142/b_harman-kardon-onyx-studio-7-1.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Gaming Mouse",
+      "price": 20,
+      "categoryId": 2,
+      "description": "Gamepower Ursa Gaming Mouse 10000DPI 7 Button",
+      "imageUrl": "https://resim.epey.com/202787/b_gamepower-ursa-rgb-1.png"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Computers"
+    },
+    {
+      "id": 2,
+      "name": "Environment Devices"
+    },
+    {
+      "id": 3,
+      "name": "Wireless Devices"
+    },
+    {
+      "id": 4,
+      "name": "Audio Devices"
+    },
+    {
+      "id": 5,
+      "name": "Monitors"
+    }
+  ]
+}
